@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For wife</title>
+  <style>
+    body {
+      background-color: #F8F4F4;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 600px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #FFF;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      color: #E61A6C;
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #333;
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .heart {
+      position: absolute;
+      display: block;
+      width: 40px;
+      height: 40px;
+      background-image: url('heart.png'); /* Replace with your heart image */
+      background-repeat: no-repeat;
+      background-size: contain;
+      animation: fade 5s infinite;
+    }
+
+    @keyframes fade {
+      0% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="container">
+    <h1>Mujhe Bas apse kehna k</h1>
+    <p id="quote"></p>
+  </div>
+
+  <script>
+    const quotes = [
+      "Mujhe Ap Buhut achi lagti hain💖.",
+      "Ap Buhut Precious hain mere liye.💕",
+      "Mujhe Apki Presence Buhut Achi lagti hai.🥰",
+      "I Meow you.🥰💕",
+      "I think of you har waqt.😊💕",
+      "I will always fall for you jese Linda.💕🥰💖",
+      "Mujhe Apki ankhein buhut achi lagti hain.🥰💕",
+      "Mujhe Apki muskurahat buhut achi lagti hai.🥰💖💕",
+      "Me Apko kabhi disappoint nahi karunga.❤",
+      "Me sari zindagi Apka khayal rakhunga.💕",
+      "Iloveyouuuuuuuuuuu💕",
+      "Miss you already.🥰💕",
+      "Mishu mera babyyyy.🥰💕💖",
+      "Ap Meri zindagi hain.🥰",
+      "Me Apse buhut pyar karta hun💖💕",
+      "Me Apko kabhi chor k nahi jaunga.💕",
+      "Ms.Shahzaib🥰💕",
+      "Me jaan deta hun ap p.🥰💖",
+      "Ap buhut valuable hain mere liye.💖",
+      "Me Sirf apke liye hun.💖🥰",
+      "Mera Pyar sirf apke liye hy.💖",
+      "Me apko hamesha khush rakhunga.😘💖",
+      "Ap p akar meri khuwaishein khatam.😘💖",
+      "Apke liye jitna shukar karun kam hai.😘💖💕",
+      "Mujhse intezar nahi hota ab.🙈",
+      "I toh laveee you.💕💖",
+      "Me Apko buhut khush rakhunga.💕💖",
+      "Mera sukoon hain ap.🌹",
+      "Mera gulab hain ap.💖",
+      "Ap meri duaon ka sila.😘🥰",
+      "Apka mujhe dekhna , buhut pasand mujhe.🥰🌹💖",
+      "Me hamesha apke sath rahunga, Har mushkil waqt meh"
+    ];
+
+    function generateQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const quoteElement = document.getElementById('quote');
+      quoteElement.textContent = quotes[randomIndex];
+    }
+
+    // Generate a quote immediately
+    generateQuote();
+
+    // Generate a new quote every 5 seconds (5000 milliseconds)
+    setInterval(generateQuote, 5000);
+
+    // Generate hearts continuously across the page
+    function generateHearts() {
+      const heart = document.createElement('span');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.top = Math.random() * 100 + 'vh';
+      heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+      document.querySelector('.background').appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(generateHearts, 500);
+  </script>
+</body>
+</html>
